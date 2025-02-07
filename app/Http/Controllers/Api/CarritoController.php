@@ -36,7 +36,10 @@ class CarritoController extends Controller
     }
     public function show($id)
     {
-        //
+        $cantidad = Carrito::where('idUsuario', $id)->count();
+        return response()->json([
+            'cantidad' => $cantidad
+        ], 200);
     }
     public function update($idUsuario, $idProducto, $cantidad)
     {
