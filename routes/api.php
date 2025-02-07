@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::delete('carrito', [CarritoController::class, 'destroy'])->middleware('auth:api');
 Route::delete('carrito/{id}',[CarritoController::class, 'destroyAll'])->middleware('auth:api');
-Route::put('carros/{idUsuario}/{idProducto}/{cantidad}', [CarritoController::class, 'update'])->middleware('auth:api');
+Route::put('carrito/{idUsuario}/{idProducto}/{cantidad}', [CarritoController::class, 'update'])->middleware('auth:api');
 
 Route::apiResource('carrito', CarritoController::class)->except(['destroy','update']);
 Route::post('login', [LoginController::class, 'login']);

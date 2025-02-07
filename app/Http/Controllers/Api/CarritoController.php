@@ -44,7 +44,7 @@ class CarritoController extends Controller
     public function update($idUsuario, $idProducto, $cantidad)
     {
         $carro = Carrito::where('idUsuario',$idUsuario)->where('idProducto',$idProducto)->first();
-        $carro->cantidad += $cantidad;
+        $carro->cantidad = $cantidad;
         $carro->save();
         return response()->json($carro,201);
     }
